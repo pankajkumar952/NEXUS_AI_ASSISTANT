@@ -438,9 +438,9 @@ NEXUS features a futuristic AI dashboard containing:
 
 # 👨‍💻 Author
 
-**Yashika Soni**
+**Er. Pankaj Kumar**
 
-🔗 GitHub: https://github.com/yashi057
+🔗 GitHub: https://github.com/pankajkumar952
 
 ---
 
