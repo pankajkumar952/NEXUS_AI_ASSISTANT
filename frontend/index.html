@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>N.E.X.U.S // MARK I</title>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ── Left sidebar (HUD panel) ── -->
+
+    <aside class="sidebar">
+
+        <!-- Animated Neural Core Ring -->
+
+        <div class="ring-wrap">
+
+            <div class="ring ring-outer-1"></div>
+
+            <div class="ring ring-outer-2"></div>
+
+            <div class="ring ring-outer-3"></div>
+
+            <div class="ring ring-arc" id="ringArc"></div>
+
+            <div class="ring-center-dot" id="centerDot"></div>
+
+        </div>
+
+
+        <p class="status-text" id="statusText">
+            [ NEXUS SYSTEM ONLINE ]
+        </p>
+
+
+        <p class="mode-text" id="modeText">
+            MODE: STANDBY
+        </p>
+
+
+        <hr class="divider">
+
+
+        <p class="section-label">
+            [ SYSTEM DIAGNOSTICS ]
+        </p>
+
+
+        <div class="stat-row">
+
+            <span class="stat-label">
+                CPU LOAD
+            </span>
+
+            <div class="stat-bar">
+                <div class="stat-fill" id="cpuFill"></div>
+            </div>
+
+            <span class="stat-value" id="cpuValue">
+                0%
+            </span>
+
+        </div>
+
+
+
+        <div class="stat-row">
+
+            <span class="stat-label">
+                MEMORY
+            </span>
+
+            <div class="stat-bar">
+                <div class="stat-fill" id="ramFill"></div>
+            </div>
+
+            <span class="stat-value" id="ramValue">
+                0%
+            </span>
+
+        </div>
+
+
+
+
+        <div class="stat-row">
+
+            <span class="stat-label">
+                POWER CELL
+            </span>
+
+            <div class="stat-bar">
+                <div class="stat-fill" id="batFill"></div>
+            </div>
+
+            <span class="stat-value" id="batValue">
+                0%
+            </span>
+
+        </div>
+
+
+
+        <hr class="divider">
+
+
+        <div class="clock" id="clock">
+            00:00:00
+        </div>
+
+
+        <div class="date" id="date">
+            DAY // DD MON YYYY
+        </div>
+
+
+
+        <hr class="divider">
+
+
+        <p class="section-label">
+            [ QUICK ACCESS ]
+        </p>
+
+
+
+        <button class="hud-btn"
+        onclick="window.open('https://youtube.com')">
+            ▶ YOUTUBE
+        </button>
+
+
+
+        <button class="hud-btn"
+        onclick="window.open('https://google.com')">
+            ◉ GOOGLE
+        </button>
+
+
+
+        <button class="hud-btn"
+        onclick="window.open('https://github.com')">
+            ⌂ GITHUB
+        </button>
+
+
+
+        <button class="hud-btn" id="clearBtn">
+            ✕ CLEAR LOG
+        </button>
+
+
+    </aside>
+
+
+
+    <!-- ── Main AI Interface ── -->
+
+
+    <main class="main">
+
+
+        <header class="topbar">
+
+
+            <span class="topbar-title">
+
+                ◈ N.E.X.U.S // CONVERSATIONAL INTERFACE
+
+            </span>
+
+
+
+            <span class="topbar-status" id="connStatus">
+
+                ● NEXUS CORE ONLINE
+
+            </span>
+
+
+        </header>
+
+
+
+
+
+        <section class="chat-scroll" id="chatScroll">
+
+
+            <!-- AI Messages appear here -->
+
+
+
+            <div class="typing-indicator"
+            id="typingIndicator"
+            style="display:none;">
+
+
+                NEXUS IS PROCESSING
+
+                <span id="typingDots"></span>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+        <footer class="input-bar">
+
+
+            <span class="input-prompt">
+
+                ▶ INPUT:
+
+            </span>
+
+
+
+
+            <input 
+            type="text"
+            id="messageInput"
+            placeholder="Type a command or question..."
+            autocomplete="off">
+
+
+
+
+
+            <button class="transmit-btn"
+            id="transmitBtn">
+
+                TRANSMIT ▶▶
+
+            </button>
+
+
+
+
+
+            <button class="voice-btn"
+            id="voiceBtn"
+            title="Voice input">
+
+                🎙
+
+            </button>
+
+
+
+        </footer>
+
+
+
+    </main>
+
+
+</div>
+
+
+
+
+<footer class="copyright">
+
+    N.E.X.U.S AI SYSTEM © 2026 | Developed by Er. Pankaj Kumar
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

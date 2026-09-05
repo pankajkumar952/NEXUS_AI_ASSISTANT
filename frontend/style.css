@@ -1,0 +1,1391 @@
+/* =========================================================
+   NEXUS AI ASSISTANT — BLUE + GREEN + PINK + RED + PURPLE
+   Blue Background + Green Main UI
+   Pink Diagnostics + Red System Status
+   Purple Core Online + Maroon Interface Title
+   ========================================================= */
+
+:root {
+    --bg: #03101a;
+    --bg-panel: #061923;
+    --bg-card: #082532;
+    --bg-msg: #071d29;
+
+    /* MAIN GREEN */
+    --primary: #00ff88;
+    --primary-light: #5cffb0;
+    --primary-dark: #00b85c;
+    --primary-glow: #00ff88;
+
+    --secondary: #00e676;
+    --secondary-dark: #00a94f;
+    --secondary-glow: #00ff95;
+
+    /* RED */
+    --accent: #ff1744;
+    --accent-dark: #c5113e;
+    --red: #ff405c;
+    --red-light: #ff6b81;
+
+    /* PINK — SYSTEM DIAGNOSTICS */
+    --pink: #ff4fa3;
+    --pink-light: #ff79b8;
+    --pink-dark: #d4146e;
+    --pink-glow: #ff2f91;
+
+    /* PURPLE — NEXUS CORE ONLINE */
+    --purple: #b026ff;
+    --purple-light: #d36aff;
+    --purple-dark: #7a00c8;
+    --purple-glow: #a600ff;
+
+    /* MAROON — CONVERSATIONAL INTERFACE */
+    --maroon: #800000;
+    --maroon-light: #a52a2a;
+    --maroon-dark: #5a0000;
+    --maroon-glow: #8b0000;
+
+    --green: #00ff88;
+
+    --white: #ffffff;
+    --text: #d9fff0;
+    --dim: #8bcab0;
+    --dimmer: #3d7861;
+
+    --border: #145a49;
+    --border-light: #1c896b;
+
+    --font-hud: "Courier New", monospace;
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    color: var(--text);
+    font-family: var(--font-hud);
+    min-height: 100vh;
+    overflow: auto;
+
+    background-color: #03101a;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 255, 136, 0.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 255, 136, 0.045) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(0, 119, 255, 0.30),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(0, 212, 255, 0.18),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(0, 100, 180, 0.15),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(0, 255, 136, 0.10),
+            transparent 38%
+        );
+
+    background-size:
+        40px 40px,
+        40px 40px,
+        auto,
+        auto,
+        auto,
+        auto;
+}
+
+
+/* =========================================================
+   MAIN APP
+   ========================================================= */
+
+.app {
+    display: flex;
+    min-height: calc(100vh - 35px);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(3, 16, 26, 0.97),
+            rgba(4, 31, 47, 0.97)
+        );
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    width: 290px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #04131e 0%,
+            #061d2a 50%,
+            #082b3b 100%
+        );
+
+    border-right:
+        1px solid #12604d;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 24px 20px;
+
+    overflow-y: auto;
+
+    box-shadow:
+        8px 0 30px rgba(0, 255, 136, 0.08);
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #17614e;
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+
+/* =========================================================
+   NEXUS CORE RINGS
+   ========================================================= */
+
+.ring-wrap {
+    position: relative;
+
+    width: 220px;
+    height: 220px;
+
+    margin-bottom: 65px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+}
+
+.ring-outer-1 {
+    width: 215px;
+    height: 215px;
+
+    border:
+        1px solid rgba(0, 255, 136, 0.40);
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 136, 0.08);
+}
+
+.ring-outer-2 {
+    width: 195px;
+    height: 195px;
+
+    border:
+        1px solid rgba(0, 230, 118, 0.35);
+}
+
+.ring-outer-3 {
+    width: 175px;
+    height: 175px;
+
+    border:
+        1px solid rgba(0, 184, 92, 0.30);
+}
+
+.ring-arc {
+    width: 155px;
+    height: 155px;
+
+    border:
+        3px solid transparent;
+
+    border-top-color:
+        var(--primary);
+
+    border-right-color:
+        var(--secondary);
+
+    border-bottom-color:
+        rgba(0, 255, 136, 0.35);
+
+    box-shadow:
+        0 0 15px rgba(0, 255, 136, 0.50),
+        0 0 30px rgba(0, 255, 136, 0.15);
+
+    animation:
+        spin 4s linear infinite;
+}
+
+.ring-center-dot {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 18px;
+    height: 18px;
+
+    background:
+        var(--primary);
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    box-shadow:
+        0 0 10px var(--primary),
+        0 0 25px rgba(0, 255, 136, 0.65),
+        0 0 45px rgba(0, 255, 136, 0.25);
+
+    animation:
+        pulse 1.8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes spin {
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+        opacity: 0.9;
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.35);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   NEXUS SYSTEM ONLINE — RED
+   ========================================================= */
+
+.status-text {
+    color:
+        #ff304f;
+
+    font-size:
+        13px;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        2px;
+
+    margin-top:
+        14px;
+
+    text-shadow:
+        0 0 8px
+        rgba(255, 48, 79, 0.65),
+
+        0 0 18px
+        rgba(255, 48, 79, 0.30);
+}
+
+
+/* =========================================================
+   MODE: STANDBY — RED
+   ========================================================= */
+
+.mode-text {
+    color:
+        #ff405c;
+
+    font-size:
+        10px;
+
+    margin-top:
+        4px;
+
+    margin-bottom:
+        14px;
+
+    letter-spacing:
+        1px;
+
+    text-shadow:
+        0 0 8px
+        rgba(255, 64, 92, 0.45);
+}
+
+
+/* =========================================================
+   DIVIDERS
+   ========================================================= */
+
+.divider {
+    width: 100%;
+
+    border: none;
+
+    border-top:
+        1px solid var(--border);
+
+    margin: 14px 0;
+}
+
+
+/* =========================================================
+   SYSTEM DIAGNOSTICS — PINK
+   ========================================================= */
+
+.section-label {
+    color:
+        var(--pink);
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        2px;
+
+    margin-bottom:
+        10px;
+
+    align-self:
+        flex-start;
+
+    text-transform:
+        uppercase;
+
+    text-shadow:
+        0 0 8px
+        rgba(255, 79, 163, 0.55),
+
+        0 0 16px
+        rgba(255, 47, 145, 0.25);
+}
+
+
+/* =========================================================
+   SYSTEM STATS
+   ========================================================= */
+
+.stat-row {
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    gap: 7px;
+
+    margin-bottom: 8px;
+
+    font-size:
+        10px;
+}
+
+.stat-label {
+    color:
+        var(--dim);
+
+    width:
+        70px;
+
+    text-transform:
+        uppercase;
+}
+
+.stat-bar {
+    flex: 1;
+
+    height:
+        7px;
+
+    background:
+        #020b12;
+
+    border:
+        1px solid var(--border);
+
+    overflow:
+        hidden;
+}
+
+.stat-fill {
+    height:
+        100%;
+
+    width:
+        0%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary-dark),
+            var(--primary),
+            var(--secondary)
+        );
+
+    box-shadow:
+        0 0 10px
+        rgba(0, 255, 136, 0.50);
+
+    transition:
+        width 0.6s ease;
+}
+
+.stat-value {
+    color:
+        var(--primary);
+
+    width:
+        35px;
+
+    text-align:
+        right;
+}
+
+
+/* =========================================================
+   CLOCK
+   ========================================================= */
+
+.clock {
+    font-size:
+        27px;
+
+    font-weight:
+        bold;
+
+    color:
+        #d9fff0;
+
+    letter-spacing:
+        2px;
+
+    text-shadow:
+        0 0 12px
+        rgba(0, 255, 136, 0.30);
+}
+
+.date {
+    font-size:
+        10px;
+
+    color:
+        var(--dim);
+
+    margin-top:
+        3px;
+
+    margin-bottom:
+        10px;
+
+    letter-spacing:
+        1px;
+}
+
+
+/* =========================================================
+   QUICK ACCESS BUTTONS
+   ========================================================= */
+
+.hud-btn {
+    width:
+        100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #061b28,
+            #082638
+        );
+
+    color:
+        #a9f5d1;
+
+    border:
+        1px solid #145a49;
+
+    padding:
+        11px 12px;
+
+    margin-bottom:
+        7px;
+
+    font-family:
+        var(--font-hud);
+
+    font-size:
+        11px;
+
+    text-align:
+        left;
+
+    cursor:
+        pointer;
+
+    border-radius:
+        5px;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.hud-btn:hover {
+    background:
+        linear-gradient(
+            90deg,
+            #07354a,
+            #08445b
+        );
+
+    border-color:
+        var(--primary);
+
+    color:
+        #ffffff;
+
+    transform:
+        translateX(3px);
+
+    box-shadow:
+        0 0 18px
+        rgba(0, 255, 136, 0.20);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.main {
+    flex:
+        1;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    min-width:
+        0;
+
+    background:
+        radial-gradient(
+            circle at 70% 30%,
+            rgba(0, 255, 136, 0.045),
+            transparent 35%
+        ),
+        #03131f;
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.topbar {
+    height:
+        55px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #041825,
+            #073044
+        );
+
+    border-bottom:
+        1px solid #14614e;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    padding:
+        0 20px;
+
+    backdrop-filter:
+        blur(10px);
+
+    box-shadow:
+        0 2px 15px
+        rgba(0, 255, 136, 0.07);
+}
+
+
+/* =========================================================
+   CONVERSATIONAL INTERFACE — MAROON
+   ========================================================= */
+
+.topbar-title {
+    color:
+        var(--maroon-light);
+
+    font-size:
+        12px;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        2px;
+
+    text-shadow:
+        0 0 8px
+        rgba(128, 0, 0, 0.65),
+
+        0 0 18px
+        rgba(139, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   NEXUS CORE ONLINE — PURPLE
+   ========================================================= */
+
+.topbar-status {
+    color:
+        var(--purple-light);
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        1px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    text-shadow:
+        0 0 8px
+        rgba(176, 38, 255, 0.70),
+
+        0 0 18px
+        rgba(166, 0, 255, 0.35);
+}
+
+
+/* =========================================================
+   CHAT AREA
+   ========================================================= */
+
+.chat-scroll {
+    flex:
+        1;
+
+    overflow-y:
+        auto;
+
+    padding:
+        24px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        14px;
+
+    scroll-behavior:
+        smooth;
+}
+
+.chat-scroll::-webkit-scrollbar {
+    width:
+        5px;
+}
+
+.chat-scroll::-webkit-scrollbar-track {
+    background:
+        #020b12;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb {
+    background:
+        #17614e;
+
+    border-radius:
+        10px;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb:hover {
+    background:
+        var(--primary);
+}
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.msg {
+    max-width:
+        680px;
+
+    padding:
+        12px 16px;
+
+    border-left:
+        3px solid var(--border);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.6;
+
+    white-space:
+        pre-wrap;
+
+    border-radius:
+        0 7px 7px 0;
+
+    box-shadow:
+        0 5px 25px
+        rgba(0, 0, 0, 0.30);
+
+    animation:
+        messageIn 0.25s ease-out;
+}
+
+@keyframes messageIn {
+    from {
+        opacity:
+            0;
+
+        transform:
+            translateY(5px);
+    }
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   NEXUS MESSAGE
+   ========================================================= */
+
+.msg-jarvis {
+    background:
+        linear-gradient(
+            135deg,
+            #082d3e,
+            #061b29
+        );
+
+    color:
+        #dffff0;
+
+    border-left-color:
+        var(--primary);
+
+    align-self:
+        flex-start;
+
+    box-shadow:
+        -4px 0 20px
+        rgba(0, 255, 136, 0.13);
+}
+
+.msg-jarvis .msg-header {
+    color:
+        var(--primary);
+}
+
+
+/* =========================================================
+   USER MESSAGE
+   ========================================================= */
+
+.msg-you {
+    background:
+        linear-gradient(
+            135deg,
+            #073c50,
+            #062a3b
+        );
+
+    color:
+        #e2fff3;
+
+    border-left-color:
+        var(--accent);
+
+    align-self:
+        flex-end;
+
+    box-shadow:
+        4px 0 20px
+        rgba(0, 255, 136, 0.12);
+}
+
+.msg-you .msg-header {
+    color:
+        #5cffb0;
+}
+
+
+/* =========================================================
+   SYSTEM MESSAGE
+   ========================================================= */
+
+.msg-system {
+    color:
+        #5ca88b;
+
+    font-size:
+        10px;
+
+    padding:
+        3px 5px;
+
+    text-align:
+        center;
+
+    letter-spacing:
+        1px;
+}
+
+
+/* =========================================================
+   TYPING INDICATOR
+   ========================================================= */
+
+.typing-indicator {
+    color:
+        var(--primary);
+
+    font-size:
+        11px;
+
+    padding:
+        5px;
+
+    letter-spacing:
+        1px;
+
+    animation:
+        typingPulse 1.2s infinite;
+}
+
+@keyframes typingPulse {
+    0%,
+    100% {
+        opacity:
+            0.4;
+    }
+
+    50% {
+        opacity:
+            1;
+    }
+}
+
+
+/* =========================================================
+   INPUT AREA
+   ========================================================= */
+
+.input-bar {
+    min-height:
+        70px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #041825,
+            #073044
+        );
+
+    border-top:
+        1px solid #14614e;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    padding:
+        10px 18px;
+
+    backdrop-filter:
+        blur(10px);
+
+    box-shadow:
+        0 -2px 15px
+        rgba(0, 255, 136, 0.06);
+}
+
+.input-prompt {
+    color:
+        var(--primary);
+
+    font-size:
+        12px;
+
+    font-weight:
+        bold;
+
+    white-space:
+        nowrap;
+
+    text-shadow:
+        0 0 8px
+        rgba(0, 255, 136, 0.35);
+}
+
+
+/* =========================================================
+   TEXT INPUT
+   ========================================================= */
+
+#messageInput {
+    flex:
+        1;
+
+    background:
+        #020c14;
+
+    border:
+        1px solid #17614e;
+
+    color:
+        #dffff0;
+
+    padding:
+        11px 13px;
+
+    font-family:
+        var(--font-hud);
+
+    font-size:
+        13px;
+
+    outline:
+        none;
+
+    border-radius:
+        5px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#messageInput::placeholder {
+    color:
+        #548b76;
+}
+
+#messageInput:focus {
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 0 0 2px
+        rgba(0, 255, 136, 0.08),
+
+        0 0 20px
+        rgba(0, 255, 136, 0.18);
+}
+
+
+/* =========================================================
+   TRANSMIT BUTTON
+   ========================================================= */
+
+.transmit-btn {
+    background:
+        linear-gradient(
+            135deg,
+            #00a95c,
+            #007d48
+        );
+
+    color:
+        #ffffff;
+
+    border:
+        1px solid
+        rgba(0, 255, 136, 0.50);
+
+    padding:
+        11px 17px;
+
+    font-family:
+        var(--font-hud);
+
+    font-size:
+        11px;
+
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
+
+    border-radius:
+        5px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.transmit-btn:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #00e676,
+            #00a95c
+        );
+
+    color:
+        #ffffff;
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 255, 136, 0.35);
+}
+
+
+/* =========================================================
+   VOICE BUTTON
+   ========================================================= */
+
+.voice-btn {
+    background:
+        #052231;
+
+    border:
+        1px solid #17614e;
+
+    color:
+        var(--primary);
+
+    font-size:
+        16px;
+
+    padding:
+        8px 14px;
+
+    cursor:
+        pointer;
+
+    border-radius:
+        5px;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.voice-btn:hover {
+    background:
+        #07435a;
+
+    border-color:
+        var(--primary);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 0 15px
+        rgba(0, 255, 136, 0.22);
+}
+
+.voice-btn.listening {
+    background:
+        #00a95c;
+
+    color:
+        #ffffff;
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 0 20px
+        rgba(0, 255, 136, 0.50);
+
+    animation:
+        listeningPulse 1s infinite;
+}
+
+@keyframes listeningPulse {
+    0%,
+    100% {
+        box-shadow:
+            0 0 10px
+            rgba(0, 255, 136, 0.25);
+    }
+
+    50% {
+        box-shadow:
+            0 0 30px
+            rgba(0, 255, 136, 0.60);
+    }
+}
+
+
+/* =========================================================
+   COPYRIGHT — RED
+   ========================================================= */
+
+.copyright {
+    width:
+        100%;
+
+    text-align:
+        center;
+
+    padding:
+        10px;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        1px;
+
+    color:
+        #ff304f;
+
+    background:
+        #020b12;
+
+    border-top:
+        1px solid #7a1830;
+
+    text-shadow:
+        0 0 8px
+        rgba(255, 48, 79, 0.65),
+
+        0 0 18px
+        rgba(255, 48, 79, 0.30);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width:
+            220px;
+
+        padding:
+            20px 14px;
+    }
+
+    .ring-wrap {
+        transform:
+            scale(0.85);
+
+        margin-bottom:
+            40px;
+    }
+
+    .chat-scroll {
+        padding:
+            15px;
+    }
+
+    .msg {
+        max-width:
+            85%;
+    }
+
+    .input-bar {
+        padding:
+            8px 10px;
+    }
+
+    .input-prompt {
+        display:
+            none;
+    }
+
+    .transmit-btn {
+        padding:
+            10px 12px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        display:
+            none;
+    }
+
+    .topbar {
+        padding:
+            0 12px;
+    }
+
+    .topbar-title {
+        font-size:
+            10px;
+    }
+
+    .chat-scroll {
+        padding:
+            12px;
+    }
+
+    .msg {
+        max-width:
+            90%;
+
+        font-size:
+            12px;
+    }
+
+    .input-bar {
+        gap:
+            6px;
+    }
+
+    #messageInput {
+        min-width:
+            0;
+    }
+
+    .voice-btn {
+        padding:
+            8px 10px;
+    }
+
+    .transmit-btn {
+        font-size:
+            10px;
+
+        padding:
+            10px;
+    }
+
+    .copyright {
+        font-size:
+            9px;
+
+        padding:
+            8px;
+    }
+}
