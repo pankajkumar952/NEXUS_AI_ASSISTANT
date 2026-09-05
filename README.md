@@ -4,7 +4,7 @@
 
 Originally inspired by a desktop AI assistant concept, NEXUS has been transformed into a **deployable full-stack web application** that can be accessed directly from a browser.
 
-🔗 **Live Demo:** https://nexus-webb.vercel.app/
+🔗 **Live Demo:** https://nexusassistant-liart.vercel.app/
 
 ---
 
